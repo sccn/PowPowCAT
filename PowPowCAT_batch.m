@@ -1,4 +1,5 @@
 % History
+% 05/13/2021 Makoto. Waitbar bug fixed.
 % 12/25/2020 Makoto. Batch version created for Pal Gunnar Larsson.
 
 % Copyright (C) 2020, Makoto Miyakoshi (mmiyakoshi@ucsd.edu) , SCCN,INC,UCSD
@@ -142,11 +143,12 @@ inputDataType  = get(handles.inputDataPopupmenu, 'Value');
 methodType     = get(handles.methodPopupmenu, 'Value');
 numIterations  = str2num(get(handles.upperFreqLimitEdit, 'String'));
 
+waitbarHandle = waitbar(0,'Please wait...');
 % Loop for the subjects.
 for subjIdx = 1:length(fileName)
     
     % Plot the wait bar.
-    waitbar(subjIdx/length(fileName), sprintf('%d/%d subjects done.', subjIdx, length(fileName)))
+    waitbar(subjIdx/length(fileName), waitbarHandle, sprintf('%d/%d subjects done.', subjIdx, length(fileName)));
     
     % Load data.
     currentSubjName = fileName{subjIdx};
