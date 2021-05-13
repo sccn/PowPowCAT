@@ -1,8 +1,9 @@
-Download the current version (12/25/2020 updated)
+Download the current version (05/13/2021 updated)
 =================================================
 
-[version 2.20](/Media:PowPowCAT2.20.zip‎ "wikilink"). Now batch process
-mode supported (it overwrites .set files). Note that it is designed as a
+[version 2.30]
+A bug in the batch process mode fixed.
+Now batch process mode supported (it overwrites .set files). Note that it is designed as a
 plugin for EEGLAB. If you are using EEGLAB2019 or newer, you can also
 download it via EEGLAB extension manager. When you publish data using
 this toolbox, please cite the following paper: [Thammasan N, Miyakoshi
