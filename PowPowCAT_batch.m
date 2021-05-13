@@ -141,7 +141,7 @@ end
 upperFreqLimit = str2num(get(handles.upperFreqLimitEdit, 'String'));
 inputDataType  = get(handles.inputDataPopupmenu, 'Value');
 methodType     = get(handles.methodPopupmenu, 'Value');
-numIterations  = str2num(get(handles.upperFreqLimitEdit, 'String'));
+numIterations  = str2num(get(handles.surroStatsIterEdit, 'String'));
 
 waitbarHandle = waitbar(0,'Please wait...');
 % Loop for the subjects.
