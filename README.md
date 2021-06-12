@@ -1,3 +1,6 @@
+![PowPowCAT_logo.png](images/PowPowCAT_logo.png)
+
+
 Download the current version (05/13/2021 updated)
 =================================================
 
