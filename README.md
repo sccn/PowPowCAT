@@ -1,5 +1,6 @@
 ![PowPowCAT_logo.png](images/PowPowCAT_logo.png)
 
+The artwork by Mayumi and Makoto Miyakoshi
 
 Download the current version (05/13/2021 updated)
 =================================================
