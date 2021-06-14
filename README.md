@@ -2,6 +2,7 @@ Presentation slides (Click the cat to download)
 =================================================
 <a href="images/PowPowCAT_30thEEGLABWorkshop.pdf" class="image fit"><img src="images/PowPowCAT_logo.png" alt=""></a>
 Presentation slides from the 30th EEGLAB workshop Day two 'Advanced Topics' (June 15, 2021).
+
 The artwork is by Mayumi and Makoto Miyakoshi.
 
 Download the current version (05/13/2021 updated)
