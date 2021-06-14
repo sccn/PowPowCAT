@@ -1,6 +1,11 @@
 ![PowPowCAT_logo.png](images/PowPowCAT_logo.png)
-![PowPowCAT_slides.pdf](images/PowPowCAT_slides.pdf)
 The artwork is by Mayumi and Makoto Miyakoshi.
+
+Presentation slides at 30th EEGLAB workshop (June 13, 2021)
+=================================================
+<a href="images/PowPowCAT_slides.pdf" class="image fit"><img src="images/PowPowCAT_logo.png" alt=""></a>
+
+
 
 Download the current version (05/13/2021 updated)
 =================================================
