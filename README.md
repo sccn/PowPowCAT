@@ -18,6 +18,16 @@ M. (2020). Cross-frequency Power-Power Coupling Analysis: A Useful
 Cross-Frequency Measure to Classify ICA-Decomposed EEG. *Sensors*.
 20:7040.](https://www.mdpi.com/1424-8220/20/24/7040)
 
+Reference paper and erratum (12/02/2021 added)
+==============================================
+
+[Thammasan N, Miyakoshi M. (2020). Cross-frequency Power-Power Coupling
+Analysis: A Useful Cross-Frequency Measure to Classify ICA-Decomposed
+EEG. *Sensors*. 20:7040 .](https://www.mdpi.com/1424-8220/20/24/7040)
+
+Here is an erratum: The equation (1) in the above paper misses the normalization term 1/k. Too bad I had not found it before I published it! 
+
+
 How to use it (12/04/2020 added)
 ================================
 
