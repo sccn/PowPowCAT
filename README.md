@@ -173,7 +173,9 @@ this batch process overwrites the exising .set files. Note also that the
 target .set files must be in the single folder.
 
 
-When the batch process is finished, go to the next step.
+When the batch process is finished, go to the next step. Note that from now on,
+only ICA-decomposed results are supported because the solution uses dipole
+density plots.
 
 ![shot3.png](images/shot3.png)
 ![shot4.png](images/shot4.png)
@@ -200,7 +202,10 @@ By pressing 'Visualizee the results' button, it generates the clustering results
 ![shot7.png](images/shot7.png)
 
 Note that it generates Matlab variable PowPowCAT in the base workspace by default.
-If the optional file export is requested, it is also saved to the specified path.
+This is a structure variable which contains basically all the results for the
+user-defined optimum number of clusters. If the optional file export is also
+requested, it save to the part of the output: dataset ID, within-subject IC indices,
+and the corresponding cluster indices.
 
 ![shot8.png](images/shot8.png)
 
