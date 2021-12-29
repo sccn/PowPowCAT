@@ -155,8 +155,8 @@ cross-frequency power-power coupling structure.
 ![Powpowcatfigure7.png](images/Powpowcatfigure7.png)
 
 
-Group-level analysis
-====================
+Group-level analysis (12/29/2021 added)
+========================================
 
 The first step is to apply a batch process on multiple .set files. This can
 be done using a batch mode. From PowPowCAT menu, click the second item.
