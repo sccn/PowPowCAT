@@ -138,6 +138,11 @@ if isempty(fileName)
     return
 end
 
+% If a single-subject is specified, convert it to cell.
+if ~iscell(fileName)
+    fileName = {fileName};
+end
+
 subjIcMatrix       = [];
 comodulogram_group = [];
 psd_group          = [];
@@ -275,6 +280,12 @@ numIcVec = cellfun(@(x) size(x,1), clusterDipxyz);
 [sortedNumIcVec,sortingIdx] = sort(numIcVec, 'descend');
 sortedClusterMeanComodulogram = clusterMeanComodulogram(:,:,sortingIdx);
 sortedClusterDipxyz           = clusterDipxyz(sortingIdx);
+sortedClusteringIdx = [cluteringIdx cluteringIdx];
+for clusterIdx = 1:length(sortingIdx)
+    currentRedefiningIdx = find(sortedClusteringIdx(:,1)==sortingIdx(clusterIdx));
+    sortedClusteringIdx(currentRedefiningIdx,2) = clusterIdx;
+end
+sortedClusteringIdx = sortedClusteringIdx(:,2);
 
 % Obtain the within-cluster distance.
 currentClsDistance = meanWithinClusterDistance(:,optimumIdx);
@@ -350,13 +361,13 @@ end
 % Store the output.
 PowPowCAT.subjIcMatrix       = carriedOverData.subjIcMatrix;
 PowPowCAT.dipxyz_group       = carriedOverData.dipxyz_group;
-PowPowCAT.cluteringIdx       = cluteringIdx;
+PowPowCAT.cluteringIdx       = sortedClusteringIdx;
 PowPowCAT.comodulogram_group = comodulogram_group;
 PowPowCAT.freqs              = carriedOverData.currentFreqs;
 currentClusDist = carriedOverData.meanWithinClusterDistance(:,optimumIdx-4);
 PowPowCAT.clusterDistances = currentClusDist(~isnan(currentClusDist));
-assignin('base', 'PowPowCAT', PowPowCAT)
-disp('PowPowCAT output is stored in the workspace.')
+assignin('base', 'PowPowCAT_output', PowPowCAT)
+disp('PowPowCAT_output is stored in the workspace.')
 
 % If requested, export a part of the results.
 if ~isempty(get(handles.folderPathEdit, 'String'))

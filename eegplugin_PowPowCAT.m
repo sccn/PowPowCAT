@@ -38,6 +38,6 @@ set(highLevelMenu, 'UserData', 'startup:on;study:on'); % This unlocks 'Tools' me
 submenu = uimenu(highLevelMenu, 'label', 'PowPowCAT','separator','on');
 
 % Create the submenu.
-uimenu( submenu, 'label', 'Signle subject',     'callback', 'PowPowCAT');
+uimenu( submenu, 'label', 'Single subject',     'callback', 'PowPowCAT');
 uimenu( submenu, 'label', 'Batch process',      'callback', 'PowPowCAT_batch');
 uimenu( submenu, 'label', 'View group summary', 'callback', 'PowPowCAT_viewGroupSummary');
