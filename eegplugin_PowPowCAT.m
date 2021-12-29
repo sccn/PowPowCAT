@@ -33,9 +33,11 @@ if nargin < 3
 end
     
 % Create the highLevelMenu.
-highLevelManu = findobj(fig, 'tag', 'tools');
-submenu       = uimenu(highLevelManu, 'label', 'PowPowCAT','separator','on');
+highLevelMenu = findobj(fig, 'tag', 'tools');
+set(highLevelMenu, 'UserData', 'startup:on;study:on'); % This unlocks 'Tools' menu without loading .set data haha.
+submenu = uimenu(highLevelMenu, 'label', 'PowPowCAT','separator','on');
 
 % Create the submenu.
-uimenu( submenu, 'label', 'Signle subject', 'callback', 'PowPowCAT');
-uimenu( submenu, 'label', 'Batch process',  'callback', 'PowPowCAT_batch');
+uimenu( submenu, 'label', 'Signle subject',     'callback', 'PowPowCAT');
+uimenu( submenu, 'label', 'Batch process',      'callback', 'PowPowCAT_batch');
+uimenu( submenu, 'label', 'View group summary', 'callback', 'PowPowCAT_viewGroupSummary');

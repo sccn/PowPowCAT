@@ -13,6 +13,7 @@
 %         EEG.etc.PowPowCAT.
 %
 % History
+% 12/19/2021 Makoto. 'progress' did not work. Commented out.
 % 12/25/2020 Makoto. Batch version created for Pal Gunnar Larsson.
 
 % Copyright (C) 2020, Makoto Miyakoshi (mmiyakoshi@ucsd.edu) , SCCN,INC,UCSD
@@ -65,28 +66,28 @@ else % Epoched data.
     warning('Epoched data analysis is severely insensitive compared with continuous data analysis.')
 end
 
-progress('init','STFT started.');
-for icIdx = 1:size(inputData,1)
+% progress('init','STFT started.');
+for inputVectorIdx = 1:size(inputData,1)
     
     % Compute short-term Fourier Transform
     % Obtain the PSD length from the output of the first iteration (Thanks Pal Gunnar Lasson! 1/10/2017)
-    if icIdx == 1;
+    if inputVectorIdx == 1;
         if size(inputData,3) == 1 % Continuous data. (12/04/2020 Makoto)
-            [~, freqs, times, firstPSD] = spectrogram(inputData(icIdx,:), EEG.srate, floor(EEG.srate/2), freqBins, EEG.srate);
+            [~, freqs, times, firstPSD] = spectrogram(inputData(inputVectorIdx,:), EEG.srate, floor(EEG.srate/2), freqBins, EEG.srate);
         else % Epoched data.
-            [~, freqs, times, firstPSD] = spectrogram(inputData(icIdx,:), EEG.pnts,  0, freqBins, EEG.srate);
+            [~, freqs, times, firstPSD] = spectrogram(inputData(inputVectorIdx,:), EEG.pnts,  0, freqBins, EEG.srate);
         end
         
         PSD = zeros(100, size(firstPSD,2), size(inputData,1));
-        PSD(:,:,icIdx) = firstPSD;
+        PSD(:,:,inputVectorIdx) = firstPSD;
     else
         if size(inputData,3) == 1 % Continuous data. (12/04/2020 Makoto)
-            [~, ~, ~, PSD(:,:,icIdx)] = spectrogram(inputData(icIdx,:), EEG.srate, floor(EEG.srate/2), freqBins, EEG.srate);
+            [~, ~, ~, PSD(:,:,inputVectorIdx)] = spectrogram(inputData(inputVectorIdx,:), EEG.srate, floor(EEG.srate/2), freqBins, EEG.srate);
         else % Epoched data.
-            [~, ~, ~, PSD(:,:,icIdx)] = spectrogram(inputData(icIdx,:), EEG.pnts,  0, freqBins, EEG.srate);
+            [~, ~, ~, PSD(:,:,inputVectorIdx)] = spectrogram(inputData(inputVectorIdx,:), EEG.pnts,  0, freqBins, EEG.srate);
         end
     end
-    progress(icIdx/size(inputData,1));
+%     progress(icIdx/size(inputData,1));
 end
 
 % Remove the chunks that contain 'boundary' for the case of continuous data.
@@ -121,8 +122,8 @@ switch methodType
     clear PSD residualVariance
     % Compute cross-frequency coupling for each ICs (spectrum covariance across moving windows).
     covMatrix  = zeros(size(cleanPSD,1), size(cleanPSD,1), size(cleanPSD,3));
-    for icIdx = 1:size(covMatrix,3)
-        covMatrix(:,:,icIdx)  = corrcoef(cleanPSD(:,:,icIdx)');
+    for inputVectorIdx = 1:size(covMatrix,3)
+        covMatrix(:,:,inputVectorIdx)  = corrcoef(cleanPSD(:,:,inputVectorIdx)');
     end
     
     case 2
@@ -130,8 +131,8 @@ switch methodType
     cleanPSD = PSD;
     % Compute cross-frequency coupling for each ICs (spectrum covariance across moving windows).
     covMatrix  = zeros(size(cleanPSD,1), size(cleanPSD,1), size(cleanPSD,3));
-    for icIdx = 1:size(covMatrix,3)
-        covMatrix(:,:,icIdx)  = corr(cleanPSD(:,:,icIdx)', 'type', 'Spearman');
+    for inputVectorIdx = 1:size(covMatrix,3)
+        covMatrix(:,:,inputVectorIdx)  = corr(cleanPSD(:,:,inputVectorIdx)', 'type', 'Spearman');
     end
 end
 
@@ -150,8 +151,8 @@ clear cleanPsdPerm cleanPsdPerm2D resampledPSD resampledPsd3D psdTimeSeriesNorm
 processTimeList = zeros(size(covMatrix,3),1);
 pvalMatrix      = zeros(size(covMatrix));
 disp('Permutation test started. Please wait...')
-progress('init','Permutation test started.');
-for icIdx = 1:size(covMatrix,3)
+% progress('init','Permutation test started.');
+for inputVectorIdx = 1:size(covMatrix,3)
     surroMatrix = single(zeros(size(cleanPSD,1), size(cleanPSD,1), numIterations));
     for iterationIdx = 1:numIterations
         
@@ -159,7 +160,7 @@ for icIdx = 1:size(covMatrix,3)
         for freqIdx = 1:size(cleanPSD,1)
             permIdxMatrix(freqIdx,:) = randperm(size(cleanPSD,2));
         end
-        surroPSD_currentIc = cleanPSD(:,:,icIdx);
+        surroPSD_currentIc = cleanPSD(:,:,inputVectorIdx);
         surroPSD = surroPSD_currentIc(permIdxMatrix);
         if     methodType==1
             surroMatrix(:,:,iterationIdx) = corrcoef(surroPSD');
@@ -169,10 +170,10 @@ for icIdx = 1:size(covMatrix,3)
     end
     
     % Perform Tim's non-parametric statistics.
-    tmpCov   = covMatrix(:,:,icIdx);
-    pvalMatrix(:,:,icIdx) = stat_surrogate_pvals(surroMatrix, tmpCov, 'both');
+    tmpCov   = covMatrix(:,:,inputVectorIdx);
+    pvalMatrix(:,:,inputVectorIdx) = stat_surrogate_pvals(surroMatrix, tmpCov, 'both');
     
-    progress(icIdx/size(covMatrix,3));
+%     progress(icIdx/size(covMatrix,3));
 end
 
 % FDR correction using all pixels from all ICs for global correction (this one is a very easy stats...)
