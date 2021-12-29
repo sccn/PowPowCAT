@@ -154,6 +154,35 @@ cross-frequency power-power coupling structure.
 
 ![Powpowcatfigure7.png](images/Powpowcatfigure7.png)
 
+
+Group-level analysis
+====================
+
+The first step is to apply a batch process on multiple .set files. This can
+be done using a batch mode. 
+
+![shot1.png](images/shot1.png)
+
+For example, IC6 and IC8 look similar in terms of their scalp topography
+and frequency spectra. However, when you compare their cross-frequency
+power correlations, the difference is clearer. Compare the difference of
+10Hz-20Hz peak in the bottom-left box bewtween IC6 and IC8.
+
+![Ic6vs8_redone.png](images/Ic6vs8_redone.png)
+![Powpowcatfigure5.png](images/Powpowcatfigure5.png)
+![Powpowcatfigure6_redone.png](images/Powpowcatfigure6_redone.png)
+
+The analysis revealed complex cross-frequency power coupling structure
+in IC15 and IC21. For example, IC15 showed 11Hz, 22Hz, 33Hz, and 44Hz
+peaks as 2nd, 3rd, and 4th harmonics. Note that the 4th harmonics can be
+seen more clearly in the correation coefficient plot than that in the
+PSD plot, indicating better sensitivity of this method to detect
+cross-frequency power-power coupling structure.
+
+![Powpowcatfigure7.png](images/Powpowcatfigure7.png)
+
+
+
 Reference
 =========
 
