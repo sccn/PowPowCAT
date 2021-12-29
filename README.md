@@ -53,6 +53,12 @@ How to use it (12/04/2020 added)
     results in the main interactive plotting panels. You may show the
     raw correlation coefficients, those masked by p\<0.05 and by p\<0.01
     after false discovery rate (FDR) correction.
+    
+Batch process from command line (12/29/2021 added)
+===================================================
+The plugin package contains calc_PowPowCAT() which takes EEG and other 4
+parameters as input and outputs EEG structure which contains
+EEG.etc.PowPowCAT under which precomputed PowPowCAT variables can be found.
 
 Results comparison (12/04/2020 added)
 =====================================
