@@ -159,28 +159,50 @@ Group-level analysis
 ====================
 
 The first step is to apply a batch process on multiple .set files. This can
-be done using a batch mode. 
+be done using a batch mode. From PowPowCAT menu, click the second item.
 
 ![shot1.png](images/shot1.png)
 
-For example, IC6 and IC8 look similar in terms of their scalp topography
-and frequency spectra. However, when you compare their cross-frequency
-power correlations, the difference is clearer. Compare the difference of
-10Hz-20Hz peak in the bottom-left box bewtween IC6 and IC8.
+It opens the following sub-window.
 
-![Ic6vs8_redone.png](images/Ic6vs8_redone.png)
-![Powpowcatfigure5.png](images/Powpowcatfigure5.png)
-![Powpowcatfigure6_redone.png](images/Powpowcatfigure6_redone.png)
+![shot2.png](images/shot2.png)
 
-The analysis revealed complex cross-frequency power coupling structure
-in IC15 and IC21. For example, IC15 showed 11Hz, 22Hz, 33Hz, and 44Hz
-peaks as 2nd, 3rd, and 4th harmonics. Note that the 4th harmonics can be
-seen more clearly in the correation coefficient plot than that in the
-PSD plot, indicating better sensitivity of this method to detect
-cross-frequency power-power coupling structure.
+At this stage, both electrode data and ICA-decomposed data are available.
+The results from the calculation is stored under EEG.etc.PowPowCAT. Note that
+this batch process overwrites the exising .set files. Note also that the
+target .set files must be in the single folder.
 
-![Powpowcatfigure7.png](images/Powpowcatfigure7.png)
 
+When the batch process is finished, go to the next step.
+
+![shot3.png](images/shot3.png)
+![shot4.png](images/shot4.png)
+
+In this sub-window, first push the top button. This promptes the user to select
+all the pre-computed data. By selecting all the data you want to include, it
+automatically starts the next calculation for optimum clustering. It may take a
+few minutes. Then the following result report pops up.
+
+![shot5.png](images/shot5.png)
+
+These plots show results from evalution of optimality when the numbers of the
+clusters are varied from 5 to 15. There are three popular criterion used for
+the k-means algorithm. The optimum points are highlighted with blue dots. In this
+example, I choose 11 because Silhouette index shows a slight peak there. Based on
+this decision, the default number is changed from 5 to 11. If you want, a part
+of the result we will see can be exported in an Excel file format by specifying
+the output folder (the bottom pushbotton and the edit box).
+
+![shot6.png](images/shot6.png)
+
+By pressing 'Visualizee the results' button, it generates the clustering results.
+
+![shot7.png](images/shot7.png)
+
+Note that it generates Matlab variable PowPowCAT in the base workspace by default.
+If the optional file export is requested, it is also saved to the specified path.
+
+![shot8.png](images/shot8.png)
 
 
 Reference
