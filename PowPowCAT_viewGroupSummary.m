@@ -1,4 +1,5 @@
 % History
+% 01/14/2022 Makoto. Minor geometrical changes in the GUI design.
 % 12/29/2021 Makoto. Debugged and updated.
 % 12/19/2021 Makoto. Written for Nicholas Dogris.
 
@@ -50,7 +51,7 @@ function varargout = PowPowCAT_viewGroupSummary(varargin)
 
 % Edit the above text to modify the response to help PowPowCAT_viewGroupSummary
 
-% Last Modified by GUIDE v2.5 29-Dec-2021 10:41:09
+% Last Modified by GUIDE v2.5 14-Jan-2022 09:42:10
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;

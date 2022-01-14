@@ -1,4 +1,5 @@
 % History
+% 01/14/2022 Makoto. If single input, convert it from char to cell.
 % 12/19/2021 Makoto. Waitbar bug fixed.
 % 12/25/2020 Makoto. Batch version created for Pal Gunnar Larsson.
 
@@ -132,10 +133,16 @@ function startPushbutton_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 % Obtain .set file.
-[fileName, pathName] = uigetfile('*.set', 'MultiSelect', 'on');
+[fileName, pathName] = uigetfile('*.set', 'MultiSelect', 'on'); % If single input, both outputs are in char. If two, filename is 1x2 cell.
 if isempty(fileName)
     disp('Cancelled.')
     return
+end
+
+% If single input, convert it from char to cell (01/14/2022 Makoto)
+if ischar(fileName)
+    fileName_convertedToCell = {fileName};
+    fileName = fileName_convertedToCell;
 end
 
 upperFreqLimit = str2num(get(handles.upperFreqLimitEdit, 'String'));
