@@ -5,19 +5,6 @@ The slides are from the 31st EEGLAB workshop, day two 'Time-frequency and connec
 
 The artwork is by Mayumi and Makoto Miyakoshi. All rights reserved!
 
-Download the current version (05/13/2021 updated)
-=================================================
-
-[version 2.30]
-A bug in the batch process mode fixed.
-Now batch process mode supported (it overwrites .set files). Note that it is designed as a
-plugin for EEGLAB. If you are using EEGLAB2019 or newer, you can also
-download it via EEGLAB extension manager. When you publish data using
-this toolbox, please cite the following paper: [Thammasan N, Miyakoshi
-M. (2020). Cross-frequency Power-Power Coupling Analysis: A Useful
-Cross-Frequency Measure to Classify ICA-Decomposed EEG. *Sensors*.
-20:7040.](https://www.mdpi.com/1424-8220/20/24/7040)
-
 Reference paper and erratum (12/02/2021 added)
 ==============================================
 
