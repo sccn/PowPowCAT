@@ -211,6 +211,11 @@ Reference
 Analysis: A Useful Cross-Frequency Measure to Classify ICA-Decomposed
 EEG. *Sensors*. 20:7040 .](https://www.mdpi.com/1424-8220/20/24/7040)
 
+Llinás RR, Ribary U, Jeanmonod D, Kronberg E, Mitra PP. (1999).
+Thalamocortical dysrhythmia: A neurological and neuropsychiatric syndrome
+characterized by magnetoencephalography. *Proc Natl Acad Sci USA*.
+96:15222-15227
+
 Sterman MB, Kaiser D. (2000). Comodulation: A new QEEG analysis metric
 for assessment of structural and functional disorders of the central
 nervous system. *Journal of Neurotherapy*. 4:73-83.
