@@ -151,7 +151,7 @@ cross-frequency power-power coupling structure.
 Group-level analysis (12/29/2021 added)
 ========================================
 
-Nick Dogris hired me to develop this part of the extention which he donated for public use (Thanks Nick!)
+Nick Dogris hired me to develop this part of the extention.  He donated it for public use (Thanks Nick!)
 The first step is to apply a batch process on multiple .set files. This can
 be done using a batch mode. From PowPowCAT menu, click the second item.
 
