@@ -1,5 +1,5 @@
 <a href="images/PowPowCAT_31stEEGLABWorkshop.pdf" class="image fit"><img src="images/PowPowCAT_logo.png" alt=""></a>
-Presentation slides (Click the cat to download). The slides are from the 31st EEGLAB workshop, day two 'Time-frequency and connectivity analysis' (November 30, 2021). Artwork is by Mayumi and Makoto Miyakoshi. All rights reserved!
+(Click the cat to download presentation slides). The slides are from the 31st EEGLAB workshop, day two 'Time-frequency and connectivity analysis' (November 30, 2021). Artwork is by Mayumi and Makoto Miyakoshi. All rights reserved!
 
 The PowPowCAT plugin for EEGLAB
 ==============================================
