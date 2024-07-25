@@ -44,8 +44,8 @@ freqBins = logspace(log10(1+deviationFromLog), log10([user_input_value]+devia
     bottom left plot.
 -   The scatter plot of the two time-series data are shown.
 
-Reference paper and erratum (12/02/2021 added)
-==============================================
+Reference paper and erratum
+===========================
 
 [Thammasan N, Miyakoshi M. (2020). Cross-frequency Power-Power Coupling
 Analysis: A Useful Cross-Frequency Measure to Classify ICA-Decomposed
@@ -54,8 +54,8 @@ EEG. *Sensors*. 20:7040 .](https://www.mdpi.com/1424-8220/20/24/7040)
 Here is an erratum: The equation (1) in the above paper misses the normalization term 1/k. Too bad I had not found it before I published it! 
 
 
-How to use it (12/04/2020 added)
-================================
+How to use it
+=============
 
 ![Defaultgui.png](images/Defaultgui.png)
 
@@ -80,14 +80,14 @@ How to use it (12/04/2020 added)
     raw correlation coefficients, those masked by p\<0.05 and by p\<0.01
     after false discovery rate (FDR) correction.
     
-Batch process from command line (12/29/2021 added)
-===================================================
+Batch process from command line
+===============================
 The plugin package contains calc_PowPowCAT() which takes EEG and other 4
 parameters as input and outputs EEG structure which contains
 EEG.etc.PowPowCAT under which precomputed PowPowCAT variables can be found.
 
-Results comparison (12/04/2020 added)
-=====================================
+Results comparison
+==================
 
 These are the selected independent components (ICs) with
 ICLabel-generated probabilistic labels.
